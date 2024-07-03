@@ -8,16 +8,12 @@
   <!-- <footer class="bg-dark text-light">
     Made with 💖 by CodeWorks
   </footer> -->
-  <newKeepModal />
-  <newVaultModal />
-  <KeepModal />
 </template>
 
 <script>
 import { computed, onMounted } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
-import KeepModal from "./components/KeepModal.vue"
 
 export default {
   setup() {
@@ -44,7 +40,7 @@ export default {
       }),
     }
   },
-  components: { Navbar, KeepModal }
+  components: { Navbar }
 }
 </script>
 <style lang="scss">

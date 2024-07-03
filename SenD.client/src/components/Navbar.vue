@@ -8,7 +8,7 @@
         </div>
       </router-link>
 
-      <div :class="dropMenu" class=" order-2 order-md-2">
+      <!-- <div :class="dropMenu" class=" order-2 order-md-2">
         <div v-if="Appstate.account.id" class="dropdown-toggle  fs-4 ms-md-4" href="#" role="button"
           data-bs-toggle="dropdown" data-display="static" aria-expanded="false" title="Create Content Forms">
           Create
@@ -26,12 +26,12 @@
             </div>
           </li>
         </ul>
-      </div>
+      </div> -->
     </div>
 
     <router-link class="order-1 order-md-3 col-4 d-flex justify-content-center fs-1 text-dark d-flex fs-4"
       :to="{ name: 'Home' }" title="Home">
-      <div class="fw-bold">Keepr </div>
+      <div class="fw-bold">SenD </div>
     </router-link>
 
     <!-- LOGIN COMPONENT HERE -->
