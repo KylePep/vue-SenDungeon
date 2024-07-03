@@ -31,7 +31,7 @@
 
     <router-link class="order-1 order-md-3 col-4 d-flex justify-content-center fs-1 text-dark d-flex fs-4"
       :to="{ name: 'Home' }" title="Home">
-      <div class="fw-bold">SenD </div>
+      <div class="fw-bold fs-1">Sendi-Dungeon</div>
     </router-link>
 
     <!-- LOGIN COMPONENT HERE -->

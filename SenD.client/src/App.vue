@@ -8,12 +8,14 @@
   <!-- <footer class="bg-dark text-light">
     Made with 💖 by CodeWorks
   </footer> -->
+  <SenDModal button="false" modal="true" />
 </template>
 
 <script>
 import { computed, onMounted } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
+import SenDModal from "./components/SenDModal.vue";
 
 export default {
   setup() {
@@ -24,7 +26,6 @@ export default {
     }
     function updateScreenWidth() {
       AppState.screenWidth = window.innerWidth;
-      // logger.log(AppState.screenWidth, 'Top')
     }
     onMounted(() => {
       updateScreenWidth()
@@ -33,14 +34,13 @@ export default {
     return {
       appState: computed(() => AppState),
       dropMenu: computed(() => {
-        // logger.log(AppState.screenWidth, 'Bottom')
         if (AppState.screenWidth < 768) {
           return 'dropup'
         } else return 'dropdown'
       }),
     }
   },
-  components: { Navbar }
+  components: { Navbar, SenDModal }
 }
 </script>
 <style lang="scss">
