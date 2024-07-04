@@ -1,5 +1,4 @@
 <script setup>
-import SenDModal from "../components/SenDModal.vue";
 </script>
 
 
@@ -15,18 +14,14 @@ import SenDModal from "../components/SenDModal.vue";
     </section>
   </div>
   <div class="col-12 mb-3">
-    <SenDModal button="true" modal="false" purpose="createMonster" btnColor="btn-success">
-      <template #icon>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#MonsterModal">
         Monster
-      </template>
-    </SenDModal>
+    </button>
   </div>
   <div class="col-12">
-    <SenDModal button="true" modal="false" purpose="createMessage" btnColor="btn-info">
-      <template #icon>
+    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#MessageModal">
         Message
-      </template>
-    </SenDModal>
+    </button>
   </div>
 </template>
 

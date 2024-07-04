@@ -8,14 +8,16 @@
   <!-- <footer class="bg-dark text-light">
     Made with 💖 by CodeWorks
   </footer> -->
-  <SenDModal button="false" modal="true" />
+  <MessageModal/>
+  <MonsterModal/>
 </template>
 
 <script>
 import { computed, onMounted } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
-import SenDModal from "./components/SenDModal.vue";
+import MonsterModal from './components/MonsterModal.vue'
+import MessageModal from './components/MessageModal.vue'
 
 export default {
   setup() {
@@ -40,7 +42,7 @@ export default {
       }),
     }
   },
-  components: { Navbar, SenDModal }
+  components: { Navbar, MessageModal, MonsterModal }
 }
 </script>
 <style lang="scss">
