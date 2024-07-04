@@ -5,6 +5,7 @@ export class Monster {
     this.img = data.img
     this.stats = data.stats
     this.creator = data.creator
+    this.description = data.description
     this.monsterMessageId = data.monsterMessageId
     // {
     //   hp = data.stats.hp
