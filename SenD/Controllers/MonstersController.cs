@@ -1,5 +1,8 @@
 namespace SendD.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
+
 public class MonstersController : ControllerBase
 {
   private readonly MonstersService _monstersService;
