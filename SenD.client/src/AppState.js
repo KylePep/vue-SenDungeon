@@ -8,6 +8,8 @@ export const AppState = reactive({
   account: {},
   /** @type {import('./models/Account.js').Account{}} */
   activeProfile: {},
+  /** @type {import('./models/Monster.js').Monster{}} */
+  monsters: [],
   userActivity: '',
   edit: false,
   screenWidth: 0
