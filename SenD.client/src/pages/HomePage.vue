@@ -1,4 +1,19 @@
 <script setup>
+import { onMounted } from "vue";
+import Pop from "../utils/Pop.js";
+import { monstersService } from "../services/MonstersService.js";
+
+async function getMonsters() {
+  try {
+    await monstersService.getMonsters()
+  } catch (error) {
+    Pop.error(error.message, '[ERROR - getMonsters]')
+  }
+}
+
+onMounted(() => {
+  getMonsters()
+})
 </script>
 
 
@@ -15,12 +30,12 @@
   </div>
   <div class="col-12 mb-3">
     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#MonsterModal">
-        Monster
+      Monster
     </button>
   </div>
   <div class="col-12">
     <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#MessageModal">
-        Message
+      Message
     </button>
   </div>
 </template>
