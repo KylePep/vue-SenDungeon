@@ -44,7 +44,7 @@ onMounted(() => {
   </div>
   <div class="col-12">
     <section class="row">
-      <div class="col-4 " v-for="monster in monsters" :key="monster.id">
+      <div class="col-3 px-0" v-for="monster in monsters" :key="monster.id">
         <MonsterCard :monsterData=monster />
       </div>
     </section>

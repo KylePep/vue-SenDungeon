@@ -4,12 +4,12 @@ const props = defineProps(["monsterData"])
 
 
 <template>
-  <div class="bg-dark text-light rounded p-3 d-flex flex-column justify-content-center align-items-center">
+  <div class="bg-dark text-light rounded p-3 m-2 d-flex flex-column justify-content-center align-items-center">
     <div>
       Name:
       {{ props.monsterData.name }}
     </div>
-    <img :src="props.monsterData.img" alt="">
+    <img :src="props.monsterData.img" class="img-fluid" alt="">
     <div>
       Type:
       {{ props.monsterData.type }}
