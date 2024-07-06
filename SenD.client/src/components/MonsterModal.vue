@@ -3,6 +3,7 @@ import { ref } from "vue";
 import Pop from "../utils/Pop.js";
 import { Modal } from "bootstrap";
 import { monstersService } from "../services/MonstersService.js";
+import { logger } from "../utils/Logger.js";
 
 export default {
   setup() {
@@ -15,6 +16,7 @@ export default {
       async createMonster() {
         try {
           const monsterData = editable.value
+          logger.log(monsterData)
           await monstersService.createMonster(monsterData)
           editable.value = {}
           Modal.getOrCreateInstance('#MonsterModal').hide()
@@ -38,11 +40,11 @@ export default {
           <h1 class="modal-title fs-5" id="MonsterModalLabel"> Make a Monster </h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form @submit.prevent="" action="">
+        <form @submit.prevent="createMonster()" action="">
           <div class="modal-body">
             <div class="mb-3">
               <label for="nameInput" class="form-label">Name</label>
-              <input type="string" class="form-control" id="nameInput" placeholder="Name">
+              <input v-model="editable.name" type="string" class="form-control" id="nameInput" placeholder="Name">
             </div>
             <div class="mb-3">
               <label for="imageInput" class="form-label d-block">Image</label>
@@ -79,18 +81,19 @@ export default {
                   Earth</option>
               </select>
               <label for="statInput" class="form-label">power</label>
-              <input type="number" class="form-control" id="powerInput" placeholder="power">
+              <input v-model="editable.power" type="number" class="form-control" id="powerInput" placeholder="power">
               <label for="statInput" class="form-label">toughness</label>
-              <input type="number" class="form-control" id="toughnessInput" placeholder="toughness">
+              <input v-model="editable.toughness" type="number" class="form-control" id="toughnessInput"
+                placeholder="toughness">
             </div>
             <div class="mb-3">
               <label for="descriptionInput" class="form-label">Description</label>
-              <textarea class="form-control" id="descriptionInput" rows="3"></textarea>
+              <textarea v-model="editable.description" class="form-control" id="descriptionInput" rows="3"></textarea>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">Create</button>
           </div>
         </form>
       </div>

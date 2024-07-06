@@ -6,9 +6,9 @@ export class Monster {
     this.creator = data.creator
     this.description = data.description
     // this.monsterMessageId = data.monsterMessageId
-    this.type = data.stats.type
-    this.subType = data.stats.subType
-    this.power = data.stats.power
-    this.toughness = data.stats.power
+    this.type = data.type
+    this.subType = data.subType
+    this.power = data.power
+    this.toughness = data.power
   }
 }
