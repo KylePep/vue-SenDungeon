@@ -1,7 +1,11 @@
 <script setup>
-import { onMounted } from "vue";
+import { computed, onMounted } from "vue";
 import Pop from "../utils/Pop.js";
 import { monstersService } from "../services/MonstersService.js";
+import { AppState } from "../AppState.js";
+import MonsterCard from "../components/MonsterCard.vue"
+
+const monsters = computed(() => AppState.monsters)
 
 async function getMonsters() {
   try {
@@ -37,6 +41,13 @@ onMounted(() => {
     <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#MessageModal">
       Message
     </button>
+  </div>
+  <div class="col-12">
+    <section class="row">
+      <div class="col-4 " v-for="monster in monsters" :key="monster.id">
+        <MonsterCard :monsterData=monster />
+      </div>
+    </section>
   </div>
 </template>
 

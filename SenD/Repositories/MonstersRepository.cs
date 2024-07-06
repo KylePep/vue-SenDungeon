@@ -48,7 +48,7 @@ public class MonstersRepository
     mn.*,
     acc.*
     FROM monsters mn
-    Join accounts acc ON acc.id = mn.creatorId
+    JOIN accounts acc ON acc.id = mn.creatorId
     ORDER BY mn.createdAt DESC
     ;";
 

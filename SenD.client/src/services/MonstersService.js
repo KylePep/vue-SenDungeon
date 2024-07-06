@@ -6,7 +6,8 @@ import { api } from "./AxiosService.js"
 class MonstersService {
   // Create Monster
   async createMonster(monsterData) {
-    const res = await api.get(`api/monsters`, monsterData)
+    const res = await api.post(`api/monsters`, monsterData)
+    logger.log('RES DATA', res.data)
     const monster = new Monster(res.data)
     logger.log('CREATE MONSTER', monster)
 
